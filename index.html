@@ -16,12 +16,11 @@
 ════════════════════════════════ -->
 <nav class="nav" id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-bracket">&lt;</span>Rence<span class="nav-logo-bracket">/&gt;</span>
+    <a href="" class="nav-logo">
+      <span class="nav-logo-bracket"></span>Solo<span class="nav-logo-bracket">X</span>
     </a>
     <div class="nav-links">
       <a href="#hero"     class="nav-link active">Home</a>
-      <a href="#chatbots" class="nav-link">AI Tools</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="Resume.html" class="nav-link">Resume</a>
       <a href="contact.html" class="nav-cta">
@@ -37,11 +36,11 @@
   </div>
   <div class="nav-drawer" id="navDrawer">
     <a href="#hero"       class="nav-drawer-link">Home</a>
-    <a href="#chatbots"   class="nav-drawer-link">AI Tools</a>
     <a href="#projects"   class="nav-drawer-link">Projects</a>
     <a href="Resume.html" class="nav-drawer-link">Resume</a>
     <a href="contact.html" class="nav-drawer-link nav-drawer-cta">Contact</a>
   </div>
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
 </nav>
 
 <!-- ═══════════════════════════════
@@ -92,7 +91,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </a>
-        <a href="resume.html" class="hero-btn-secondary">View Resume</a>
+        <a href="Resume.html" class="hero-btn-secondary">View Resume</a>
       </div>
 
       <div class="hero-stats">
@@ -116,7 +115,7 @@
     <div class="hero-card">
       <div class="hero-card-glow"></div>
       <div class="hero-avatar-wrap">
-        <img src="11.jpg" alt="Rence Samontañez" class="hero-avatar"
+        <img src="/files/11.jpg" alt="Rence Samontañez" class="hero-avatar"
           onerror="this.style.display='none';document.querySelector('.hero-avatar-fallback').style.display='flex'">
         <div class="hero-avatar-fallback">RS</div>
         <div class="hero-avatar-ring"></div>
@@ -140,76 +139,9 @@
 
   </div>
 
-  <div class="hero-scroll-hint">
-    <div class="hero-scroll-line"></div>
-    <span>Scroll</span>
-  </div>
 </section>
 
-<!-- ═══════════════════════════════
-     AI TOOLS
-════════════════════════════════ -->
-<section class="section ai-section" id="chatbots">
-  <div class="section-bg-grid"></div>
-  <div class="section-orb section-orb-left"></div>
-  <div class="section-orb section-orb-right"></div>
 
-  <div class="section-container">
-    <div class="section-header">
-      <div class="section-badge">
-        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>
-        </svg>
-        AI Tools
-      </div>
-      <h2 class="section-title">Chatbots &amp; <span class="accent">AI Projects</span></h2>
-      <p class="section-subtitle">AI-powered tools and chatbots I've designed and built from scratch.</p>
-    </div>
-
-    <div class="ai-grid">
-
-      <div class="ai-card" data-aos>
-        <div class="ai-card-top">
-          <div class="ai-card-icon">🤖</div>
-          <div class="ai-card-status ai-status--live"><span class="ai-status-dot"></span>Live</div>
-        </div>
-        <h3 class="ai-card-title">SoloDEV Assistant</h3>
-        <p class="ai-card-desc">An AI-powered chatbot for the SoloDEV platform. Helps players with game guides, quest walkthroughs, and real-time support — trained on custom game data.</p>
-        <div class="ai-card-tags"><span>Python</span><span>OpenAI API</span><span>Firebase</span></div>
-        <div class="ai-card-footer">
-          <a href="#" class="ai-card-btn">View Project <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </div>
-
-      <div class="ai-card" data-aos>
-        <div class="ai-card-top">
-          <div class="ai-card-icon">🧠</div>
-          <div class="ai-card-status ai-status--dev"><span class="ai-status-dot"></span>In Dev</div>
-        </div>
-        <h3 class="ai-card-title">Portfolio AI Guide</h3>
-        <p class="ai-card-desc">A context-aware chatbot embedded in this portfolio. Answers questions about my skills, experience, and projects so recruiters get instant answers without digging.</p>
-        <div class="ai-card-tags"><span>JavaScript</span><span>Claude API</span><span>Embeddings</span></div>
-        <div class="ai-card-footer">
-          <a href="#" class="ai-card-btn">View Project <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </div>
-
-      <div class="ai-card" data-aos>
-        <div class="ai-card-top">
-          <div class="ai-card-icon">📊</div>
-          <div class="ai-card-status ai-status--live"><span class="ai-status-dot"></span>Live</div>
-        </div>
-        <h3 class="ai-card-title">Data Analytics Bot</h3>
-        <p class="ai-card-desc">Connects to datasets and lets users ask plain-English questions to get instant chart summaries, trends, and insights — no SQL knowledge needed.</p>
-        <div class="ai-card-tags"><span>Python</span><span>Power BI</span><span>NLP</span></div>
-        <div class="ai-card-footer">
-          <a href="#" class="ai-card-btn">View Project <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════
      PROJECTS — TABS
@@ -231,7 +163,7 @@
     </div>
 
     <div class="tabs-wrap">
-      <div class="tabs-bar" role="tablist">
+      <div class="tabs-bar" role="tablist" id="projectsTabsBar">
         <button class="tab-btn active" role="tab" data-tab="all">All</button>
         <button class="tab-btn" role="tab" data-tab="web">Web Apps</button>
         <button class="tab-btn" role="tab" data-tab="game">Games</button>
@@ -350,12 +282,11 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="footer-logo"><span class="nav-logo-bracket">&lt;</span>Rence<span class="nav-logo-bracket">/&gt;</span></span>
+        <span class="footer-logo"><span class="nav-logo-bracket"></span>Solo<span class="nav-logo-bracket">X</span></span>
         <p class="footer-tagline">Building things that matter, one commit at a time.</p>
       </div>
       <nav class="footer-nav">
         <a href="#hero">Home</a>
-        <a href="#chatbots">AI Tools</a>
         <a href="#projects">Projects</a>
         <a href="Resume.html">Resume</a>
         <a href="contact.html">Contact</a>
@@ -374,7 +305,7 @@
         <a href="https://www.linkedin.com/in/rensuru" target="_blank" aria-label="LinkedIn">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a href="mailto:rencesamontanez@gmail.com" aria-label="Email">
+        <a href="/cdn-cgi/l/email-protection#2250474c414751434f4d4c56434c475862454f434b4e0c414d4f" aria-label="Email">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </a>
       </div>
