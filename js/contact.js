@@ -1,6 +1,5 @@
 // ===================================
 // CONTACT FORM — contact.js
-// Uses EmailJS to send directly to Gmail
 // ===================================
 
 const EMAILJS_PUBLIC_KEY  = 'i7MifOA3_CLCGir9U';
@@ -15,6 +14,90 @@ const submitBtn = document.getElementById('contact-submit');
 const labelEl   = submitBtn.querySelector('.contact-submit-label');
 const loadingEl = submitBtn.querySelector('.contact-submit-loading');
 const statusEl  = document.getElementById('contact-status');
+const toastContainer = document.getElementById('toast-container');
+
+// ===================================
+// TOAST NOTIFICATION SYSTEM
+// ===================================
+const TOAST_ICONS = {
+  success: `<svg class="toast-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  error:   `<svg class="toast-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  warning: `<svg class="toast-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>`,
+  info:    `<svg class="toast-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+};
+
+const TOAST_TITLES = {
+  success: 'Message Sent!',
+  error:   'Something Went Wrong',
+  warning: 'Hold On',
+  info:    'Heads Up',
+};
+
+function showToast(type, message, duration = 5000) {
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.style.setProperty('--toast-duration', `${duration}ms`);
+
+  toast.innerHTML = `
+    ${TOAST_ICONS[type]}
+    <div class="toast-body">
+      <p class="toast-title">${TOAST_TITLES[type]}</p>
+      <p class="toast-msg">${message}</p>
+    </div>
+    <button class="toast-close" aria-label="Dismiss">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  `;
+
+  toastContainer.appendChild(toast);
+
+  // Trigger slide-in
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => toast.classList.add('show'));
+  });
+
+  // Close button
+  toast.querySelector('.toast-close').addEventListener('click', () => dismissToast(toast));
+
+  // Auto dismiss
+  const timer = setTimeout(() => dismissToast(toast), duration);
+
+  // Pause drain on hover
+  toast.addEventListener('mouseenter', () => {
+    clearTimeout(timer);
+    toast.style.animationPlayState = 'paused';
+    toast.querySelector('::after');
+    // Pause the ::after pseudo animation via class
+    toast.classList.add('paused');
+  });
+  toast.addEventListener('mouseleave', () => {
+    toast.classList.remove('paused');
+    setTimeout(() => dismissToast(toast), 1500);
+  });
+}
+
+function dismissToast(toast) {
+  toast.classList.remove('show');
+  toast.classList.add('hide');
+  toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+}
+
+// ===================================
+// INLINE STATUS BANNER (below form)
+// ===================================
+function showStatus(type, message) {
+  const icons = {
+    success: `<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    error:   `<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    warning: `<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>`,
+  };
+  statusEl.className = `contact-status show ${type}`;
+  statusEl.innerHTML = `${icons[type]} <span>${message}</span>`;
+  statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  if (type === 'success') setTimeout(() => statusEl.classList.remove('show'), 8000);
+}
 
 // ===================================
 // BANNED WORDS — English + Filipino
@@ -49,14 +132,12 @@ const BLOCKED_DOMAINS = [
   'tempinbox.com','spamwc.com','crazymailing.com',
 ];
 
-// Fake name patterns
 const FAKE_NAME_PATTERNS = [
   /^(.)\1{2,}$/i,
   /^(test|tester|testing|asdf|qwerty|zxcvbn|lorem|ipsum|admin|user|guest|anon|anonymous|nobody|noone|haha|hehe|lol|wtf|fake|troll|bot|robot|null|undefined|xyz|abc|zzz|aaa|bbb)$/i,
   /^[^a-zA-Z\u00C0-\u024F]+$/,
 ];
 
-// Troll email local-part patterns
 const TROLL_EMAIL_PATTERNS = [
   /^(test|tester|asdf|qwerty|zxcvbn|fake|troll|nobody|noreply|noemail|donotreply|null|undefined|example|lorem|ipsum|admin123|user123)(\d*)$/i,
   /^(.)\1{4,}/i,
@@ -96,8 +177,6 @@ function floodCooldownMsg() {
 // ===================================
 // INPUT DETECTION HELPERS
 // ===================================
-
-// Banned words check
 function containsBannedWord(text) {
   const clean = text.toLowerCase().replace(/[^a-z0-9\s]/gi, ' ');
   return BANNED_WORDS.some(word => {
@@ -105,62 +184,42 @@ function containsBannedWord(text) {
     return new RegExp(`(^|\\s)${esc}(\\s|$)`, 'i').test(clean);
   });
 }
-
-// Blocked email domain
 function isBlockedDomain(email) {
   const domain = email.split('@')[1]?.toLowerCase() || '';
   return BLOCKED_DOMAINS.includes(domain);
 }
-
-// Troll email pattern
 function isTrollEmail(email) {
   const local = email.split('@')[0] || '';
   return TROLL_EMAIL_PATTERNS.some(p => p.test(local));
 }
-
-// Fake name pattern
 function isFakeName(name) {
   return FAKE_NAME_PATTERNS.some(p => p.test(name.trim()));
 }
-
-// Numbers in name — allow hyphens/apostrophes/spaces but not digits
 function hasNumbersInName(name) {
   return /\d/.test(name);
 }
-
-// ALL CAPS — if 80%+ of letters are uppercase and there are 3+ letters, flag it
 function isAllCaps(text) {
   const letters = text.replace(/[^a-zA-Z]/g, '');
   if (letters.length < 3) return false;
-  const upperCount = (text.match(/[A-Z]/g) || []).length;
-  return upperCount / letters.length >= 0.8;
+  return (text.match(/[A-Z]/g) || []).length / letters.length >= 0.8;
 }
-
-// Repeated word spam — e.g. "hello hello hello hello"
 function isRepeatedSpam(text) {
   const words = text.trim().toLowerCase().split(/\s+/);
   if (words.length < 4) return false;
-  // Count frequency of each word
   const freq = {};
   words.forEach(w => { freq[w] = (freq[w] || 0) + 1; });
-  const maxFreq = Math.max(...Object.values(freq));
-  // If any single word makes up more than 50% of the total, it's spam
-  return maxFreq / words.length > 0.5;
+  return Math.max(...Object.values(freq)) / words.length > 0.5;
 }
-
-// Copy-paste wall of text — same character repeated excessively
 function isCopyPasteGarbage(text) {
-  // Detect long runs of the same character (e.g. "aaaaaaaaaa")
   return /(.)\1{9,}/.test(text);
 }
 
 // ===================================
-// SHAKE ANIMATION TRIGGER
+// SHAKE ANIMATION
 // ===================================
 function shakeField(id) {
   const el = document.getElementById(id);
   el.classList.remove('shake');
-  // Force reflow so the animation restarts if already shaking
   void el.offsetWidth;
   el.classList.add('shake');
   el.addEventListener('animationend', () => el.classList.remove('shake'), { once: true });
@@ -173,13 +232,13 @@ const rules = {
   'cf-name': {
     errId: 'err-name',
     validate(v) {
-      if (!v.trim())              return 'Name is required.';
-      if (v.trim().length < 2)    return 'Name must be at least 2 characters.';
-      if (v.trim().length > 60)   return 'Name is too long (max 60 characters).';
-      if (hasNumbersInName(v))    return 'Name should not contain numbers.';
-      if (isAllCaps(v))           return 'Please don\'t type in all caps.';
-      if (isFakeName(v))          return 'Please enter your real name.';
-      if (containsBannedWord(v))  return 'Please keep it respectful — no inappropriate language.';
+      if (!v.trim())             return 'Name is required.';
+      if (v.trim().length < 2)   return 'Name must be at least 2 characters.';
+      if (v.trim().length > 60)  return 'Name is too long (max 60 characters).';
+      if (hasNumbersInName(v))   return 'Name should not contain numbers.';
+      if (isAllCaps(v))          return "Please don't type in all caps.";
+      if (isFakeName(v))         return 'Please enter your real name.';
+      if (containsBannedWord(v)) return 'Please keep it respectful — no inappropriate language.';
       return null;
     },
   },
@@ -196,12 +255,12 @@ const rules = {
   'cf-subject': {
     errId: 'err-subject',
     validate(v) {
-      if (!v.trim())              return 'Subject is required.';
-      if (v.trim().length < 3)    return 'Subject must be at least 3 characters.';
-      if (v.trim().length > 100)  return 'Subject is too long (max 100 characters).';
-      if (isAllCaps(v))           return 'Please don\'t type in all caps.';
-      if (isCopyPasteGarbage(v))  return 'Subject contains invalid repeated characters.';
-      if (containsBannedWord(v))  return 'Please keep it respectful — no inappropriate language.';
+      if (!v.trim())             return 'Subject is required.';
+      if (v.trim().length < 3)   return 'Subject must be at least 3 characters.';
+      if (v.trim().length > 100) return 'Subject is too long (max 100 characters).';
+      if (isAllCaps(v))          return "Please don't type in all caps.";
+      if (isCopyPasteGarbage(v)) return 'Subject contains invalid repeated characters.';
+      if (containsBannedWord(v)) return 'Please keep it respectful — no inappropriate language.';
       return null;
     },
   },
@@ -211,7 +270,7 @@ const rules = {
       if (!v.trim())              return 'Message is required.';
       if (v.trim().length < 10)   return 'Message must be at least 10 characters.';
       if (v.trim().length > 3000) return 'Message is too long (max 3000 characters).';
-      if (isAllCaps(v))           return 'Please don\'t type in all caps — it\'s hard to read.';
+      if (isAllCaps(v))           return "Please don't type in all caps — it's hard to read.";
       if (isRepeatedSpam(v))      return 'Your message looks like spam. Please write a real message.';
       if (isCopyPasteGarbage(v))  return 'Message contains invalid repeated characters.';
       if (containsBannedWord(v))  return 'Your message contains inappropriate language. Please revise it.';
@@ -220,22 +279,17 @@ const rules = {
   },
 };
 
-// ===================================
-// VALIDATE SINGLE FIELD
-// ===================================
 function validateField(id) {
-  const el    = document.getElementById(id);
-  const rule  = rules[id];
-  const errEl = document.getElementById(rule.errId);
-  const error = rule.validate(el.value);
+  const el       = document.getElementById(id);
+  const rule     = rules[id];
+  const errEl    = document.getElementById(rule.errId);
+  const error    = rule.validate(el.value);
   const wasError = el.classList.contains('error');
 
   el.classList.toggle('error', !!error);
   errEl.textContent = error || '';
 
-  // Only shake if this is a new error (not already in error state)
   if (error && !wasError) shakeField(id);
-
   return !error;
 }
 
@@ -243,7 +297,7 @@ function validateAll() {
   return Object.keys(rules).map(validateField).every(Boolean);
 }
 
-// Live validation — on blur and on input if already errored
+// Live validation
 Object.keys(rules).forEach(id => {
   document.getElementById(id).addEventListener('blur',  () => validateField(id));
   document.getElementById(id).addEventListener('input', () => {
@@ -260,18 +314,6 @@ function setLoading(on) {
   loadingEl.hidden   = !on;
 }
 
-function showStatus(type, message) {
-  const icons = {
-    success: `<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-    error:   `<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-    warning: `<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>`,
-  };
-  statusEl.className = `contact-status show ${type}`;
-  statusEl.innerHTML = `${icons[type]} <span>${message}</span>`;
-  statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  if (type === 'success') setTimeout(() => statusEl.classList.remove('show'), 8000);
-}
-
 // ===================================
 // SUBMIT HANDLER
 // ===================================
@@ -281,14 +323,20 @@ form.addEventListener('submit', async (e) => {
 
   // 1. Flood check
   if (isFlooding()) {
-    showStatus('warning', floodCooldownMsg());
+    const msg = floodCooldownMsg();
+    showStatus('warning', msg);
+    showToast('warning', msg, 6000);
     return;
   }
 
-  // 2. Validate all fields — shake each invalid one
-  if (!validateAll()) return;
+  // 2. Validate all fields
+  if (!validateAll()) {
+    showToast('error', 'Please fix the highlighted fields before sending.', 4000);
+    return;
+  }
 
   setLoading(true);
+  showToast('info', 'Sending your message…', 3000);
 
   const params = {
     from_name:  document.getElementById('cf-name').value.trim(),
@@ -301,15 +349,22 @@ form.addEventListener('submit', async (e) => {
   try {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
     recordSubmit();
-    showStatus('success', `Message sent! I'll get back to you as soon as possible.`);
+
+    // ✅ Success — inline banner + toast
+    showStatus('success', "Message sent! I'll get back to you as soon as possible.");
+    showToast('success', "Your message was sent successfully! I'll get back to you soon.", 7000);
+
     form.reset();
     Object.keys(rules).forEach(id => {
       document.getElementById(id).classList.remove('error');
       document.getElementById(rules[id].errId).textContent = '';
     });
+
   } catch (err) {
     console.error('EmailJS error:', err);
-    showStatus('error', 'Something went wrong. Please try emailing me directly at rencesamontanez@gmail.com');
+    const errMsg = 'Failed to send. Please email me directly at rencesamontanez@gmail.com';
+    showStatus('error', errMsg);
+    showToast('error', errMsg, 8000);
   } finally {
     setLoading(false);
   }
