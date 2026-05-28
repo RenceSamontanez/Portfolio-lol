@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index1.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
 
@@ -23,6 +25,9 @@
       <a href="#hero"     class="nav-link active">Home</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="Resume.html" class="nav-link">Resume</a>
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#skills"   class="nav-link">Skills</a>
+      <a href="#services" class="nav-link">Services</a>
       <a href="contact.html" class="nav-cta">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -63,7 +68,7 @@
     <div class="hero-text">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        Available for opportunities
+        Looking for work
       </div>
 
       <h1 class="hero-title">
@@ -115,7 +120,7 @@
     <div class="hero-card">
       <div class="hero-card-glow"></div>
       <div class="hero-avatar-wrap">
-        <img src="files/11.jpg" alt="Rence Samontañez" class="hero-avatar"
+        <img src="/files/11.jpg" alt="Rence Samontañez" class="hero-avatar"
           onerror="this.style.display='none';document.querySelector('.hero-avatar-fallback').style.display='flex'">
         <div class="hero-avatar-fallback">RS</div>
         <div class="hero-avatar-ring"></div>
@@ -192,13 +197,13 @@
             <span class="project-badge project-badge--web">Web App</span>
             <span class="project-year">2025</span>
           </div>
-          <h3 class="project-card-title">SoloDEV Platform</h3>
-          <p class="project-card-desc">Full-stack gaming platform with user auth, character progression, leaderboards, and an integrated AI assistant.</p>
+          <h3 class="project-card-title">SoloDEV</h3>
+          <p class="project-card-desc">A fitness and self development platform that pushes you to your best form</p>
           <div class="project-card-stack"><span>React</span><span>Node.js</span><span>Firebase</span><span>TailwindCSS</span></div>
         </div>
       </div>
 
-      <div class="project-card" data-category="game">
+      <div class="project-card" data-category="web">
         <div class="project-card-img project-img--2">
           <div class="project-card-overlay">
             <a href="#" class="project-overlay-btn">
@@ -213,17 +218,41 @@
         </div>
         <div class="project-card-body">
           <div class="project-card-meta">
-            <span class="project-badge project-badge--game">Game</span>
+            <span class="project-badge project-badge--web">Web App</span>
             <span class="project-year">2025</span>
           </div>
           <h3 class="project-card-title">SoloDEV Ragnarok</h3>
-          <p class="project-card-desc">Browser-based RPG inspired by Ragnarok Online — real-time combat, inventory system, and multiplayer guild mechanics.</p>
+          <p class="project-card-desc">SoloDev Ragnarok is a improved version of SoloDev with new UI features and chatbot assistant Beru implemented.</p>
           <div class="project-card-stack"><span>JavaScript</span><span>Canvas API</span><span>Socket.io</span><span>MongoDB</span></div>
         </div>
       </div>
 
-      <div class="project-card" data-category="tool">
+      <div class="project-card" data-category="game">
         <div class="project-card-img project-img--3">
+          <div class="project-card-overlay">
+            <a href="#" class="project-overlay-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Live Demo
+            </a>
+            <a href="#" class="project-overlay-btn project-overlay-btn--gh">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-meta">
+            <span class="project-badge project-badge--game">Game</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3 class="project-card-title">Roblox Obby</h3>
+          <p class="project-card-desc">A challenging obstacle course (Obby) built in Roblox Studio, designed for fast-paced multiplayer fun and creativity.</p>
+          <div class="project-card-stack"><span>Roblox Studio</span><span>Lua</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="tool">
+        <div class="project-card-img project-img--4">
           <div class="project-card-overlay">
             <a href="#" class="project-overlay-btn">
               <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -240,33 +269,9 @@
             <span class="project-badge project-badge--tool">Tool</span>
             <span class="project-year">2024</span>
           </div>
-          <h3 class="project-card-title">Analytics Dashboard</h3>
-          <p class="project-card-desc">Power BI-connected dashboard with live data feeds, automated reports, and an AI layer for natural language business queries.</p>
-          <div class="project-card-stack"><span>Python</span><span>Power BI</span><span>SQL</span><span>Azure</span></div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="web">
-        <div class="project-card-img project-img--4">
-          <div class="project-card-overlay">
-            <a href="#" class="project-overlay-btn">
-              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              Live Demo
-            </a>
-            <a href="#" class="project-overlay-btn project-overlay-btn--gh">
-              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <div class="project-card-body">
-          <div class="project-card-meta">
-            <span class="project-badge project-badge--web">Web App</span>
-            <span class="project-year">2024</span>
-          </div>
-          <h3 class="project-card-title">Portfolio &amp; Resume Site</h3>
-          <p class="project-card-desc">This site — fully hand-coded with dark cyber aesthetics, animated resume, and EmailJS contact form. Zero frameworks.</p>
-          <div class="project-card-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>EmailJS</span></div>
+          <h3 class="project-card-title">Beru</h3>
+          <p class="project-card-desc">A personal assistant that helps you manage work, time, alarms, phone timeouts, and gives you performance summaries—all from your phone.</p>
+          <div class="project-card-stack"><span>Python</span><span>Flutter</span><span>Firebase</span><span>Push Notifications</span></div>
         </div>
       </div>
 
@@ -274,6 +279,521 @@
   </div>
 </section>
 
+
+<section class="section about-section" id="about">
+  <div class="about-inner">
+ 
+    <!-- Section label -->
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Who I Am</span>
+      <span class="eyebrow-line"></span>
+    </div>
+ 
+    <div class="about-grid">
+ 
+      <!-- Left: Photo + floating cards -->
+      <div class="about-photo-col">
+        <div class="about-photo-frame">
+          <div class="about-photo-glow"></div>
+          <img src="/files/11.jpg" alt="Rence Samontañez" class="about-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="about-photo-fallback">RS</div>
+          <div class="about-photo-corner about-photo-corner--tl"></div>
+          <div class="about-photo-corner about-photo-corner--tr"></div>
+          <div class="about-photo-corner about-photo-corner--bl"></div>
+          <div class="about-photo-corner about-photo-corner--br"></div>
+        </div>
+ 
+        <!-- Floating stat cards -->
+        <div class="about-float-card about-float-card--1">
+          <span class="about-float-icon">⚡</span>
+          <div>
+            <p class="about-float-num">3+</p>
+            <p class="about-float-label">Years Learning</p>
+          </div>
+        </div>
+        <div class="about-float-card about-float-card--2">  
+          <span class="about-float-icon">🏆</span>
+          <div>
+            <p class="about-float-num">4</p>
+            <p class="about-float-label">Projects Shipped</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Right: Story + Timeline -->
+      <div class="about-content-col">
+        <h2 class="about-heading">
+          Building with purpose,<br>
+          <span class="accent">growing without limits.</span>
+        </h2>
+ 
+        <p class="about-body">
+          I started coding not because of a class, but because I wanted to build things. What began as curiosity with basic websites quickly turned into a deep passion for creating systems that actually solve problems — for real people, in real contexts.
+        </p>
+        <p class="about-body">
+          Today I focus on <strong>full-stack development</strong>, blending backend logic with intuitive interfaces. I'm actively building toward scalable system architecture while exploring how AI can augment the work we do — not replace the people doing it.
+        </p>
+        <p class="about-body">
+          My goal: become the kind of developer who can own an entire product from database to deployment — and earn the trust to do so.
+        </p>
+ 
+        <!-- Journey timeline -->
+        <div class="about-timeline">
+          <div class="about-tl-item">
+            <div class="about-tl-dot"></div>
+            <div class="about-tl-content">
+              <span class="about-tl-year">2022</span>
+              <p class="about-tl-text">First line of code — HTML/CSS curiosity turned obsession</p>
+            </div>
+          </div>
+          <div class="about-tl-item">
+            <div class="about-tl-dot"></div>
+            <div class="about-tl-content">
+              <span class="about-tl-year">2023</span>
+              <p class="about-tl-text">Learned JavaScript, PHP &amp; Laravel — built first real systems</p>
+            </div>
+          </div>
+          <div class="about-tl-item">
+            <div class="about-tl-dot"></div>
+            <div class="about-tl-content">
+              <span class="about-tl-year">2024</span>
+              <p class="about-tl-text">Expanded into Python, SQL, Power BI &amp; cloud deployment</p>
+            </div>
+          </div>
+          <div class="about-tl-item about-tl-item--active">
+            <div class="about-tl-dot"></div>
+            <div class="about-tl-content">
+              <span class="about-tl-year">2025 →</span>
+              <p class="about-tl-text">Building AI-integrated apps, seeking first professional role</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!--
+  ════════════════════════════════════════════════════
+  STEP 1 — Add this ONE line to your <head>
+  (after your Google Fonts links, before index1.css)
+
+
+  ════════════════════════════════════════════════════
+  STEP 2 — Replace your entire #skills section HTML
+  with the block below.
+  ════════════════════════════════════════════════════
+-->
+
+<section class="section skills-section" id="skills">
+  <div class="skills-inner">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Tech Arsenal</span>
+      <span class="eyebrow-line"></span>
+    </div>
+
+    <h2 class="section-heading">What I <span class="accent">Work With</span></h2>
+    <p class="section-sub">Tools, languages &amp; frameworks I use to bring ideas to life.</p>
+
+    <div class="skills-categories">
+
+      <!-- ── Languages ── -->
+      <div class="skills-cat">
+        <div class="skills-cat-header">
+          <span class="skills-cat-icon">{ }</span>
+          <h3 class="skills-cat-title">Languages</h3>
+        </div>
+        <div class="skills-list">
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--js">
+              <i class="devicon-javascript-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">JavaScript</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:90%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--php">
+              <i class="devicon-php-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">PHP</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:80%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--py">
+              <i class="devicon-python-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Python</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:75%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--html">
+              <i class="devicon-html5-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">HTML / CSS</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:95%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--sql">
+              <i class="devicon-mysql-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">SQL</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:65%"></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Frameworks ── -->
+      <div class="skills-cat">
+        <div class="skills-cat-header">
+          <span class="skills-cat-icon">⬡</span>
+          <h3 class="skills-cat-title">Frameworks</h3>
+        </div>
+        <div class="skills-list">
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--react">
+              <i class="devicon-react-original colored"></i>
+            </div>
+            <span class="skill-pill-name">React</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:85%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--laravel">
+              <i class="devicon-laravel-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Laravel</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:80%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--bootstrap">
+              <i class="devicon-bootstrap-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Bootstrap</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:88%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--node">
+              <i class="devicon-nodejs-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Node.js</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:70%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--tailwind">
+              <i class="devicon-tailwindcss-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">TailwindCSS</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:75%"></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Tools & Platforms ── -->
+      <div class="skills-cat">
+        <div class="skills-cat-header">
+          <span class="skills-cat-icon">⚙</span>
+          <h3 class="skills-cat-title">Tools &amp; Platforms</h3>
+        </div>
+        <div class="skills-list">
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--git">
+              <i class="devicon-git-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Git / GitHub</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:85%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--figma">
+              <i class="devicon-figma-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Figma</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:80%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--firebase">
+              <i class="devicon-firebase-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">Firebase</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:72%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-pill-icon skill-icon--mysql">
+              <i class="devicon-mysql-plain colored"></i>
+            </div>
+            <span class="skill-pill-name">MySQL</span>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--w:70%"></div></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+<!-- ═══════════════════════════════
+     SERVICES
+════════════════════════════════ -->
+<section class="section services-section" id="services">
+  <div class="services-inner">
+ 
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">What I Offer</span>
+      <span class="eyebrow-line"></span>
+    </div>
+ 
+    <h2 class="section-heading">Services I <span class="accent">Can Deliver</span></h2>
+    <p class="section-sub">Flexible, end-to-end solutions for individuals &amp; small businesses.</p>
+ 
+    <div class="services-grid">
+ 
+      <div class="service-card">
+        <div class="service-card-glow"></div>
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-desc">Full-stack websites &amp; web applications — from landing pages to complex platforms with auth, databases &amp; APIs.</p>
+        <ul class="service-tags">
+          <li>Custom Websites</li><li>Web Apps</li><li>REST APIs</li><li>CMS Integration</li>
+        </ul>
+      </div>
+ 
+      <div class="service-card">
+        <div class="service-card-glow"></div>
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+        </div>
+        <h3 class="service-title">UI/UX Design</h3>
+        <p class="service-desc">Interfaces that feel as good as they look. Wireframes, prototypes &amp; high-fidelity designs built for real users.</p>
+        <ul class="service-tags">
+          <li>Figma Prototypes</li><li>Responsive Design</li><li>Design Systems</li><li>User Flows</li>
+        </ul>
+      </div>
+ 
+      <div class="service-card">
+        <div class="service-card-glow"></div>
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3 class="service-title">System Design</h3>
+        <p class="service-desc">Architecture that scales. From ERDs to deployment diagrams — designing systems that survive growth.</p>
+        <ul class="service-tags">
+          <li>Database Design</li><li>API Architecture</li><li>Cloud Setup</li><li>Optimization</li>
+        </ul>
+      </div>
+ 
+      <div class="service-card">
+        <div class="service-card-glow"></div>
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="service-title">Digital Marketing</h3>
+        <p class="service-desc">Data-driven strategies that drive visibility. SEO, content, analytics &amp; paid ad management for real ROI.</p>
+        <ul class="service-tags">
+          <li>SEO Optimization</li><li>Analytics Setup</li><li>Ad Campaigns</li><li>Content Strategy</li>
+        </ul>
+      </div>
+ 
+      <div class="service-card">
+        <div class="service-card-glow"></div>
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="service-title">Sales &amp; Advertising</h3>
+        <p class="service-desc">Conversion-focused pages, ad creatives &amp; sales funnel design that turns visitors into customers.</p>
+        <ul class="service-tags">
+          <li>Landing Pages</li><li>Ad Creatives</li><li>Sales Funnels</li><li>Copywriting</li>
+        </ul>
+      </div>
+ 
+      <div class="service-card">
+        <div class="service-card-glow"></div>
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="service-title">Online Services &amp; Automation</h3>
+        <p class="service-desc">Workflow automation, chatbots, integrations &amp; virtual assistance — freeing you from repetitive tasks.</p>
+        <ul class="service-tags">
+          <li>Bot Development</li><li>API Integrations</li><li>Task Automation</li><li>Tech Support</li>
+        </ul>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ═══════════════════════════════
+     PROCESS
+════════════════════════════════ -->
+<section class="section process-section" id="process">
+  <div class="process-inner">
+ 
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">How I Work</span>
+      <span class="eyebrow-line"></span>
+    </div>
+ 
+    <h2 class="section-heading">My <span class="accent">Process</span></h2>
+    <p class="section-sub">A clear, repeatable approach to taking ideas from concept to launch.</p>
+ 
+    <div class="process-track">
+      <div class="process-connector">
+        <span class="process-streak"></span>
+      </div>
+ 
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <div class="process-step-card">
+          <div class="process-step-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <h3 class="process-step-title">Discovery &amp; Planning</h3>
+          <p class="process-step-desc">Understanding goals, users, constraints &amp; defining scope before writing a single line of code.</p>
+        </div>
+      </div>
+ 
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <div class="process-step-card">
+          <div class="process-step-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+          </div>
+          <h3 class="process-step-title">Design &amp; Prototype</h3>
+          <p class="process-step-desc">Wireframes and high-fidelity mockups in Figma — validated before development begins.</p>
+        </div>
+      </div>
+ 
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <div class="process-step-card">
+          <div class="process-step-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 class="process-step-title">Development</h3>
+          <p class="process-step-desc">Clean, documented code. Component-first architecture, version-controlled and reviewed at every stage.</p>
+        </div>
+      </div>
+ 
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <div class="process-step-card">
+          <div class="process-step-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="process-step-title">Testing &amp; QA</h3>
+          <p class="process-step-desc">Cross-browser, cross-device testing with real users. Bugs caught before they become features.</p>
+        </div>
+      </div>
+ 
+      <div class="process-step">
+        <div class="process-step-num">05</div>
+        <div class="process-step-card">
+          <div class="process-step-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+          </div>
+          <h3 class="process-step-title">Deployment</h3>
+          <p class="process-step-desc">Live, monitored, documented. CI/CD pipelines, server setup, and post-launch support included.</p>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════
+     TESTIMONIALS
+════════════════════════════════ -->
+<section class="section testimonials-section" id="testimonials">
+  <div class="testimonials-inner">
+ 
+    <div class="section-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Social Proof</span>
+      <span class="eyebrow-line"></span>
+    </div>
+ 
+    <h2 class="section-heading">What People <span class="accent">Are Saying</span></h2>
+    <p class="section-sub">Feedback from professors, teammates &amp; collaborators I've had the privilege to work with.</p>
+ 
+    <div class="testimonials-grid">
+ 
+      <div class="testi-card">
+        <div class="testi-card-glow"></div>
+        <div class="testi-quote-icon">"</div>
+        <p class="testi-text">Rence has a rare combination of technical depth and design sensibility. He delivered a fully functional full-stack system ahead of schedule and the UI was honestly better than anything I've seen from a student project.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TC</div>
+          <div>
+            <p class="testi-name">School Proffesor</p>
+            <p class="testi-role">IT Department, University Instructor</p>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+ 
+      <div class="testi-card">
+        <div class="testi-card-glow"></div>
+        <div class="testi-quote-icon">"</div>
+        <p class="testi-text">Working with Rence on our capstone project was a different experience. He pushed us to think about architecture from day one, not just "making it work." The system we built was actually production-ready.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MT</div>
+          <div>
+            <p class="testi-name">Monica T.</p>
+            <p class="testi-role">Capstone Teammate, BSIT Graduate</p>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+ 
+      <div class="testi-card">
+        <div class="testi-card-glow"></div>
+        <div class="testi-quote-icon">"</div>
+        <p class="testi-text">I asked Rence to help redesign our org's website. He didn't just redo the visuals — he rebuilt the whole thing with a CMS so our non-tech officers could update it themselves. Incredibly thoughtful.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">KL</div>
+          <div>
+            <p class="testi-name">Keith L.</p>
+            <p class="testi-role">Student Organization President</p>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- CTA strip -->
+    <div class="testi-cta">
+      <p class="testi-cta-text">Ready to add your name to this list?</p>
+      <a href="contact.html" class="hero-btn-primary">
+        Let's Work Together
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+ 
+  </div>
+</section>
 <!-- ═══════════════════════════════
      FOOTER
 ════════════════════════════════ -->
@@ -283,7 +803,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="footer-logo"><span class="nav-logo-bracket"></span>Solo<span class="nav-logo-bracket">X</span></span>
-        <p class="footer-tagline">Building things that matter, one commit at a time.</p>
+        <p class="footer-tagline">Excellence is not an act, but a habit. "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." <br><span style="font-size:12px;color:var(--muted)">— Colossians 3:23 (NIV)</span></p>
       </div>
       <nav class="footer-nav">
         <a href="#hero">Home</a>
@@ -291,12 +811,7 @@
         <a href="Resume.html">Resume</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a href="contact.html" class="footer-cta-btn">
-        Let's Work Together
-        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
+      <!-- Removed 'Let's Work Together' CTA for a cleaner, professional look -->
     </div>
     <div class="footer-divider"></div>
     <div class="footer-bottom">
@@ -305,8 +820,41 @@
         <a href="https://www.linkedin.com/in/rensuru" target="_blank" aria-label="LinkedIn">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a href="/cdn-cgi/l/email-protection#2250474c414751434f4d4c56434c475862454f434b4e0c414d4f" aria-label="Email">
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <a href="mailto:rencesamontanez@gmail.com" aria-label="Gmail">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2"/>
+            <path d="M3 7l9 6 9-6" stroke-width="2"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm6-1a1 1 0 112 0 1 1 0 01-2 0z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/yourusername" target="_blank" aria-label="Facebook">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 
+            24h11.494v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 
+            1.325 0 2.463.098 2.797.142v3.24l-1.918.001c-1.504 0-1.797.715-1.797 
+            1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 
+            22.675V1.325C24 .6 23.4 0 22.675 0"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/639123456789" target="_blank" aria-label="WhatsApp">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.52 3.478A11.857 11.857 0 0 0 12.001.001c-6.627 
+            0-12 5.373-12 12 0 2.12.553 4.182 1.601 5.978L.075 23.225a1 
+            1 0 0 0 1.27 1.27l5.247-1.526A11.941 11.941 0 0 0 12 24c6.627 
+            0 12-5.373 12-12 0-3.189-1.243-6.188-3.48-8.522zM12 22c-1.891 
+            0-3.737-.521-5.317-1.506l-.38-.228-3.122.91.911-3.039-.247-.393C2.2 
+            15.559 1.594 13.81 1.594 12c0-5.73 4.676-10.406 10.406-10.406 
+            2.789 0 5.377 1.087 7.343 3.052a10.344 10.344 0 0 1 3.053 7.354c0 
+            5.73-4.677 10.406-10.406 10.406zm5.465-7.214l-2.065-.593c-.276-.079-.573 
+            0-.778.203l-.962.987a8.564 8.564 0 0 1-3.528-3.535l.979-.959a.6.6 0 
+            0 0 .198-.784l-.594-2.066a.758.758 0 0 0-.715-.521h-.494a.767.767 
+            0 0 0-.767.767c0 5.210 4.247 9.457 9.457 9.457.423 0 .768-.345.768-.767v-.494a.76.76 
+            0 0 0-.522-.768zm0 0"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -314,5 +862,6 @@
 </footer>
 
 <script src="js/index.js"></script>
+<script src="js/index1.js"></script>
 </body>
 </html>
